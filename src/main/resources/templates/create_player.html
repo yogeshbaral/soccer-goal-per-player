@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Soccer Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <!-- The class on the div helps to make sure it is supportive on all devices -->
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Create New Student</h1>
+            <div class = "card-body">
+                <form th:action="@{/players}" th:object = "${player}" method="post">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field = "${player.firstName}"
+                                class="form-control"
+                                placeholder="Enter Player's First Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input
+                                type="text"
+                                name="lastName"
+                                th:field = "${player.lastName}"
+                                class="form-control"
+                                placeholder="Enter Player's Last Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Fifa Recognized Goals</label>
+                        <input
+                                type="text"
+                                name="fifaRecognizedGoals"
+                                th:field = "${player.fifaRecognizedGoals}"
+                                class="form-control"
+                                placeholder="Enter Fifa Recognized Goals"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Club</label>
+                        <input
+                                type="text"
+                                name="currentClub"
+                                th:field = "${player.currentClub}"
+                                class="form-control"
+                                placeholder="Enter Current Club Name"/>
+                    </div>
+
+                    <div class = "box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</body>
+</html>
